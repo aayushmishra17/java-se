@@ -38,7 +38,7 @@ public class HowToConsoleInput {
         System.err.print(n);
         System.out.println();
 
-        System.out.print("Enter an integer: ");
+        System.out.print("Enter a floating point number: ");
         float f = sc.nextFloat();
         System.err.print(f);
         System.out.println();
