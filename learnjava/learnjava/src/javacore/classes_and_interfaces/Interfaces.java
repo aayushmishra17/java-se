@@ -27,6 +27,35 @@ public class Interfaces {
         public static void staticMethod() {
             System.out.println("Inside ExampleClass static method!");
         }
+
+        public void demoNestedInterface() {
+            InnerInterface.NestedInnerInterface nestedIntf = new InnerInterface.NestedInnerInterface() {
+
+                @Override
+                public int innerMethod() {
+                    System.out.println("Inside innerMethod of InnerInterface.NestedInnerInterface.");
+                    return 0;
+                }
+
+            };
+            nestedIntf.innerMethod();
+        }
+    }
+
+    private interface InnerInterface {
+
+        int i = 7;
+
+        int myMethod();
+
+        public interface NestedInnerInterface {
+
+            int j = 77;
+
+            int innerMethod();
+
+        }
+
     }
 
 }
