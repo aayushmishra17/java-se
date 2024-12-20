@@ -11,25 +11,33 @@ public class MethodHiding {
          * The actual method called depends on the reference type and not the type of
          * object.
          */
-        BaseClass baseClassRefObj1 = outterClassObj.new BaseClass(); // base class obj type
-        BaseClass baseClassRefObj2 = outterClassObj.new DerivedClass(); // derived class obj type
-        DerivedClass derivedClassObjRef = outterClassObj.new DerivedClass(); // derived class obj type
+        BaseLogger logger1 = new DevLogger();
+        BaseLogger logger2 = new ProdLogger();
 
-        baseClassRefObj1.exampleStaticMethod();
-        baseClassRefObj2.exampleStaticMethod();
-        derivedClassObjRef.exampleStaticMethod();
+        // Calls the configure method from BaseLogger
+        logger1.configure(); // Output: Configuring Base Logger
+        logger2.configure(); // Output: Configuring Base Logger
+
+        // Direct calls to the specific logger configurations
+        DevLogger.configure(); // Output: Configuring Development Logger
+        ProdLogger.configure(); // Output: Configuring Production Logger
     }
+}
 
-    public class BaseClass {
-        public static void exampleStaticMethod() {
-            System.out.println("In BaseClass -> exampleStaticMethod");
-        }
+class BaseLogger {
+    static void configure() {
+        System.out.println("Configuring base logger...");
     }
+}
 
-    public class DerivedClass extends BaseClass {
-        public static void exampleStaticMethod() {
-            System.out.println("In DerivedClass -> exampleStaticMethod");
-        }
+class DevLogger extends BaseLogger {
+    static void configure() {
+        System.out.println("Configuring dev logger...");
+    }
+}
 
+class ProdLogger extends BaseLogger {
+    static void configure() {
+        System.out.println("Configuring production logger...");
     }
 }
