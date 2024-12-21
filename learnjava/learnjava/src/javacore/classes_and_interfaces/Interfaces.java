@@ -29,11 +29,22 @@ public class Interfaces {
         }
 
         public void demoNestedInterface() {
+            InnerInterface interfaceObj = new InnerInterface() {
+
+                @Override
+                public int myMethod() {
+                    return i;
+                }
+
+            };
+            interfaceObj.myMethod();
+
             InnerInterface.NestedInnerInterface nestedIntf = new InnerInterface.NestedInnerInterface() {
 
                 @Override
                 public int innerMethod() {
                     System.out.println("Inside innerMethod of InnerInterface.NestedInnerInterface.");
+                    System.out.println("i = " + j);
                     return 0;
                 }
 
@@ -56,6 +67,36 @@ public class Interfaces {
 
         }
 
+    }
+
+}
+
+interface PI1 {
+    default void show() {
+        System.out.println("Default method of PI1");
+    }
+}
+
+interface PI2 {
+    default void show() {
+        System.out.println("Default method of PI2");
+    }
+
+    default void showAll() {
+        System.out.println("Default showAll of PI2");
+    }
+}
+
+/*
+ * Demonstrates how to explicitly call a method from an implemented interface.
+ * Syntax: InterfaceName.super.methodName()
+ */
+class TestClass implements PI1, PI2 {
+
+    public void show() {
+        PI1.super.show();
+        PI2.super.show();
+        PI2.super.showAll();
     }
 
 }
