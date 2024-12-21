@@ -43,3 +43,20 @@ public class LambdaExpressions {
     }
 
 }
+
+/*
+ * Lambdas and anonymous classes are also reffered to as closures in java.
+ */
+class ClosureExample {
+    void demoClosure() {
+        int outerVariable = 10; // This variable will be captured by the closure
+
+        // Lambda expression as a closure
+        Runnable closure = () -> {
+            System.out.println("Outer variable: " + outerVariable);
+        };
+
+        // Execute the closure
+        closure.run(); // Outputs: Outer variable: 10
+    }
+}
