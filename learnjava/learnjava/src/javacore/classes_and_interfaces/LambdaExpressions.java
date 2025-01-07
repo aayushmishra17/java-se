@@ -6,7 +6,7 @@ import java.util.function.Consumer;
  * A lambda expression is not a method, although its declaration looks similar to a method. 
  * A lambda expression is an expression that represents an instance of a functional interface.
  * Every expression in Java has a type, and so does a lambda expression.
- * The type of a lambda expression is a functional interface type.
+ * The type of lambda expression is a functional interface type.
  * When the abstract method of the functional interface is called, the body of the lambda expression is executed.
  */
 public class LambdaExpressions {
@@ -52,7 +52,7 @@ public class LambdaExpressions {
 }
 
 /*
- * Lambdas and anonymous classes are also reffered to as closures in java.
+ * Lambdas and anonymous classes are also referred to as closures in java.
  */
 class ClosureExample {
     void demoClosure() {

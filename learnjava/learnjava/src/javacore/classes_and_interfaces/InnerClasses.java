@@ -168,7 +168,7 @@ class AnonymousClass {
     }
 }
 
-class LambdaExpressions {
+class LambdaExpression {
     void demoLambda() {
         Predicate<Integer> p = (Integer x) -> x == 7;
         p.test(7);
