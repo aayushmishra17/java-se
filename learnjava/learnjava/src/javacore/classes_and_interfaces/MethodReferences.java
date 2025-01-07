@@ -27,13 +27,13 @@ public class MethodReferences {
 /*
  * Super type instance method reference.
  */
-interface Shape {
+interface ShapeInterface {
     default double getArea() {
         return 1.0;
     }
 }
 
-class Rectangle implements Shape {
+class Rectangle implements ShapeInterface {
     private String name = "Unknown";
     private double area = 0.0;
 
@@ -85,7 +85,7 @@ class Rectangle implements Shape {
         Supplier<Double> s3 = this::getArea;
 
         // Uses the Shape.getArea() method
-        Supplier<Double> s4 = Shape.super::getArea;
+        Supplier<Double> s4 = ShapeInterface.super::getArea;
 
         // Uses all method references and prints the results
         System.out.println("this::toString: " + s1.get());
