@@ -52,6 +52,8 @@ public class HashMapDemo {
         // We can also specify initial capacity and load factor.
         HashMap<Integer, String> map2 = new HashMap<>(20, 0.5f);
 
+        map.getOrDefault(7, "19");
+        map.putIfAbsent(77, "17");
     }
 
 }
