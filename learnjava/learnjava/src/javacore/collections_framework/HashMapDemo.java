@@ -15,6 +15,7 @@ public class HashMapDemo {
 
         HashMap<Integer, String> map = new HashMap<>();
         map.put(1, "Alex"); // O(1)
+        map.put(1, "Alexander"); // will replace previous value associated with key 1.
         map.put(2, "Bob");
         map.put(3, "Marley");
         map.put(null, null); // key can be null.
